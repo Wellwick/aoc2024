@@ -1,6 +1,6 @@
 # Parser module that can return array of tokens, coordinate data, etc.
 
-def get_lines(day : int):
+def get_lines(day : int) -> list[list[str]]:
     if (day < 1 or day > 25):
         raise ValueError
     
@@ -13,7 +13,7 @@ def get_lines(day : int):
     with open(filename, "r") as f:
         return f.readlines()
 
-def get_tokens(day : int, seperator : str = " "):
+def get_tokens(day : int, seperator : str = " ") -> list[list[str]]:
     lines = get_lines(day)
     tokens = []
     for line in lines:
@@ -26,7 +26,7 @@ def get_tokens(day : int, seperator : str = " "):
 
     return tokens
 
-def get_ints(day : int, seperator : str = " "):
+def get_ints(day : int, seperator : str = " ") -> list[list[int]]:
     int_tokens = []
     for line in get_tokens(day, seperator):
         int_line = []
